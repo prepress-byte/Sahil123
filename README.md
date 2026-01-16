@@ -53,11 +53,9 @@
     <a href="#">LinkedIn</a>
   </p>
 </section>
-
 <footer>
   © 2026 Your Name. All Rights Reserved.
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
@@ -68,13 +66,11 @@
   --muted: #9ca3af;
   --accent: #6366f1;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
