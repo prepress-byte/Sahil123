@@ -1,171 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jane Doe | Graphic Designer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Portfolio</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* ===== RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      transition: background 0.3s, color 0.3s;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #e5e5e5;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+/* ===== GLOBAL ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    img {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-    }
+section {
+  padding: 80px 10%;
+}
 
-    /* ===== THEME ===== */
-    body.light {
-      background: #f8f9fc;
-      color: #222;
-    }
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #fff;
+}
 
-    body.dark {
-      background: #0f172a;
-      color: #e5e7eb;
-    }
+/* ===== NAV ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
 
-    /* ===== TOGGLE ===== */
-    .toggle-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 16px;
-      border-radius: 20px;
-      border: none;
-      cursor: pointer;
-      background: #6366f1;
-      color: #fff;
-      z-index: 1000;
-    }
+nav h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
 
-    /* ===== NAV ===== */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 30px 10%;
-    }
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
 
-    nav h1 {
-      font-weight: 700;
-      font-size: 22px;
-    }
+/* ===== HERO ===== */
+.hero {
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
 
-    nav ul {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
+.hero-text h2 {
+  font-size: 42px;
+}
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      padding: 0 10%;
-    }
+.hero-text span {
+  color: #22c55e;
+}
 
-    .hero-text h2 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+.hero-text p {
+  margin-top: 10px;
+  opacity: 0.8;
+}
 
-    .hero-text span {
-      color: #6366f1;
-    }
+.hero-image img {
+  border-radius: 20px;
+}
 
-    .hero-text p {
-      font-size: 18px;
-      opacity: 0.8;
-    }
+/* ===== ABOUT (2 COLUMN) ===== */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
 
-    /* ===== SECTIONS ===== */
-    section {
-      padding: 80px 10%;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: 0.6s ease;
-    }
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.skill {
+  padding: 8px 14px;
+  background: #22c55e;
+  color: #000;
+  border-radius: 20px;
+  font-size: 14px;
+}
 
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
+/* ===== PORTFOLIO (GRID COLUMNS) ===== */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
 
-    /* ===== SKILLS ===== */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+.portfolio img {
+  width: 100%;
+  border-radius: 16px;
+  transition: transform 0.3s;
+}
 
-    .skill {
-      padding: 10px 16px;
-      background: #6366f1;
-      color: white;
-      border-radius: 20px;
-      font-size: 14px;
-    }
+.portfolio img:hover {
+  transform: scale(1.05);
+}
 
-    /* ===== PORTFOLIO ===== */
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
+/* ===== CONTACT (2 COLUMN) ===== */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
 
-    /* ===== CONTACT ===== */
-    .contact p {
-      margin-bottom: 10px;
-    }
+.contact-info p {
+  margin-bottom: 10px;
+}
 
-    /* ===== FOOTER ===== */
-    footer {
-      text-align: center;
-      padding: 30px;
-      opacity: 0.7;
-    }
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 8px;
+}
 
-    /* ===== RESPONSIVE ===== */
-    @media(max-width: 768px) {
-      .hero-text h2 {
-        font-size: 32px;
-      }
+form button {
+  padding: 12px;
+  border: none;
+  background: #22c55e;
+  color: #000;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-      nav ul {
-        gap: 15px;
-      }
-    }
-  </style>
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #222;
+  opacity: 0.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero,
+  .about,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h2 {
+    font-size: 32px;
+  }
+}
+</style>
 </head>
 
-<body class="light">
-
-<button class="toggle-btn" id="modeToggle">Dark Mode</button>
+<body>
 
 <nav>
   <h1>Jane Doe</h1>
@@ -176,23 +186,31 @@
   </ul>
 </nav>
 
-<div class="hero">
+<section class="hero">
   <div class="hero-text">
     <h2>Hi, I'm <span>Jane Doe</span></h2>
     <p>Professional Graphic Designer & Visual Creator</p>
   </div>
-</div>
+  <div class="hero-image">
+    <img src="https://via.placeholder.com/400x400?text=Your+Photo">
+  </div>
+</section>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I design modern, meaningful visuals for brands. I specialize in branding, UI/UX, and social media design.</p>
+  <div class="about">
+    <p>
+      I create modern, clean and powerful designs for brands.  
+      Specializing in branding, UI/UX and social media creatives.
+    </p>
 
-  <div class="skills">
-    <div class="skill">Photoshop</div>
-    <div class="skill">Illustrator</div>
-    <div class="skill">Figma</div>
-    <div class="skill">UI/UX</div>
-    <div class="skill">Branding</div>
+    <div class="skills">
+      <div class="skill">Photoshop</div>
+      <div class="skill">Illustrator</div>
+      <div class="skill">Figma</div>
+      <div class="skill">UI/UX</div>
+      <div class="skill">Branding</div>
+    </div>
   </div>
 </section>
 
@@ -206,42 +224,26 @@
   </div>
 </section>
 
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Email: yourname@example.com</p>
-  <p>LinkedIn | Behance | Dribbble</p>
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact">
+    <div class="contact-info">
+      <p>Email: yourname@example.com</p>
+      <p>LinkedIn | Behance | Dribbble</p>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea rows="4" placeholder="Message"></textarea>
+      <button>Send Message</button>
+    </form>
+  </div>
 </section>
 
 <footer>
   © 2026 Jane Doe. All Rights Reserved.
 </footer>
-
-<script>
-  const toggleBtn = document.getElementById("modeToggle");
-
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    document.body.classList.toggle("light");
-
-    toggleBtn.textContent =
-      document.body.classList.contains("dark")
-      ? "Light Mode"
-      : "Dark Mode";
-  });
-
-  const sections = document.querySelectorAll("section");
-
-  const reveal = () => {
-    sections.forEach(sec => {
-      if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-        sec.classList.add("visible");
-      }
-    });
-  };
-
-  window.addEventListener("scroll", reveal);
-  window.addEventListener("load", reveal);
-</script>
 
 </body>
 </html>
