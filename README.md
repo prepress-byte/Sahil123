@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Professional Portfolio</title>
+<title>Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -17,18 +17,20 @@ body{
 }
 a{text-decoration:none;color:inherit}
 
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:30px 10%;
+  padding:25px 10%;
 }
 nav h1{color:#fff;font-size:22px}
-nav ul{display:flex;gap:25px;list-style:none}
+nav ul{list-style:none;display:flex;gap:25px}
 nav a:hover{color:#22c55e}
 
+/* SECTIONS */
 section{padding:80px 10%}
-h2{font-size:32px;margin-bottom:20px;color:#fff}
+h2{color:#fff;font-size:32px;margin-bottom:20px}
 
 /* HERO */
 .hero{
@@ -39,8 +41,7 @@ h2{font-size:32px;margin-bottom:20px;color:#fff}
 }
 .hero-text h2{font-size:42px}
 .hero-text span{color:#22c55e}
-.hero-text p{margin-top:10px;opacity:.8}
-.hero-image img{border-radius:20px;width:100%}
+.hero-image img{width:100%;border-radius:20px}
 
 /* ABOUT */
 .about{
@@ -57,10 +58,10 @@ h2{font-size:32px;margin-bottom:20px;color:#fff}
   font-size:14px;
 }
 
-/* PORTFOLIO */
+/* WORK */
 .portfolio{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:25px;
 }
 .portfolio img{
@@ -97,7 +98,7 @@ button{
 /* FOOTER */
 footer{
   text-align:center;
-  padding:30px;
+  padding:25px;
   border-top:1px solid #222;
   opacity:.6;
 }
@@ -124,17 +125,17 @@ footer{
 <section class="hero">
   <div class="hero-text">
     <h2>Hi, I'm <span>Jane Doe</span></h2>
-    <p>Professional Graphic Designer & Visual Creator</p>
+    <p>Graphic Designer & Visual Creator</p>
   </div>
   <div class="hero-image">
-    <img src="https://via.placeholder.com/400x400" alt="Profile">
+    <img src="https://via.placeholder.com/400x400">
   </div>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
   <div class="about">
-    <p>I create modern, clean and powerful designs for brands.</p>
+    <p>I design clean and modern visuals for brands.</p>
     <div class="skills">
       <div class="skill">Photoshop</div>
       <div class="skill">Illustrator</div>
@@ -172,7 +173,7 @@ footer{
 </section>
 
 <footer>
-  © 2026 Jane Doe. All Rights Reserved.
+  © 2026 Jane Doe
 </footer>
 
 </body>
