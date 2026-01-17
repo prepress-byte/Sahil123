@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graphic Designer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jane Doe | Graphic Designer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== Reset ===== */
+    /* ===== RESET ===== */
     * {
       margin: 0;
       padding: 0;
@@ -16,7 +18,6 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
       transition: background 0.3s, color 0.3s;
     }
 
@@ -26,60 +27,83 @@
     }
 
     img {
-      max-width: 100%;
+      width: 100%;
       display: block;
+      border-radius: 12px;
     }
 
-    /* ===== Light / Dark Mode ===== */
+    /* ===== THEME ===== */
     body.light {
-      background: #f9f9f9;
+      background: #f8f9fc;
       color: #222;
     }
 
     body.dark {
-      background: #121212;
-      color: #f1f1f1;
+      background: #0f172a;
+      color: #e5e7eb;
     }
 
-    /* ===== Toggle Button ===== */
+    /* ===== TOGGLE ===== */
     .toggle-btn {
       position: fixed;
       top: 20px;
       right: 20px;
-      padding: 10px 15px;
-      border: none;
+      padding: 10px 16px;
       border-radius: 20px;
+      border: none;
       cursor: pointer;
-      background: #6c63ff;
-      color: white;
+      background: #6366f1;
+      color: #fff;
       z-index: 1000;
     }
 
-    /* ===== Hero ===== */
-    .hero {
-      min-height: 100vh;
-      padding: 40px;
-      background: linear-gradient(135deg, #6c63ff, #928cff);
-      color: white;
-    }
-
+    /* ===== NAV ===== */
     nav {
       display: flex;
-      gap: 20px;
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 10%;
     }
 
-    .hero-content {
-      text-align: center;
-      margin-top: 150px;
+    nav h1 {
+      font-weight: 700;
+      font-size: 22px;
     }
 
-    /* ===== Sections ===== */
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 0 10%;
+    }
+
+    .hero-text h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text span {
+      color: #6366f1;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      opacity: 0.8;
+    }
+
+    /* ===== SECTIONS ===== */
     section {
       padding: 80px 10%;
       opacity: 0;
       transform: translateY(40px);
-      transition: all 0.6s ease;
+      transition: 0.6s ease;
     }
 
     section.visible {
@@ -87,17 +111,54 @@
       transform: translateY(0);
     }
 
-    /* ===== Portfolio ===== */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
     }
 
-    /* ===== Footer ===== */
+    /* ===== SKILLS ===== */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill {
+      padding: 10px 16px;
+      background: #6366f1;
+      color: white;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    /* ===== PORTFOLIO ===== */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact p {
+      margin-bottom: 10px;
+    }
+
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
+      opacity: 0.7;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width: 768px) {
+      .hero-text h2 {
+        font-size: 32px;
+      }
+
+      nav ul {
+        gap: 15px;
+      }
     }
   </style>
 </head>
@@ -106,68 +167,80 @@
 
 <button class="toggle-btn" id="modeToggle">Dark Mode</button>
 
-<header class="hero">
-  <nav>
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <h1>Jane Doe</h1>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <div class="hero-content">
+<div class="hero">
+  <div class="hero-text">
     <h2>Hi, I'm <span>Jane Doe</span></h2>
-    <p>Graphic Designer & Visual Storyteller</p>
+    <p>Professional Graphic Designer & Visual Creator</p>
   </div>
-</header>
+</div>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I am a creative graphic designer specializing in branding, UI/UX, and illustration.</p>
-</section>
+  <p>I design modern, meaningful visuals for brands. I specialize in branding, UI/UX, and social media design.</p>
 
-<section id="portfolio">
-  <h2>My Work</h2>
-  <div class="gallery">
-    <img src="https://via.placeholder.com/400x300">
-    <img src="https://via.placeholder.com/400x300">
-    <img src="https://via.placeholder.com/400x300">
-    <img src="https://via.placeholder.com/400x300">
+  <div class="skills">
+    <div class="skill">Photoshop</div>
+    <div class="skill">Illustrator</div>
+    <div class="skill">Figma</div>
+    <div class="skill">UI/UX</div>
+    <div class="skill">Branding</div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Me</h2>
+<section id="work">
+  <h2>My Work</h2>
+  <div class="portfolio">
+    <img src="https://via.placeholder.com/400x300?text=Project+1">
+    <img src="https://via.placeholder.com/400x300?text=Project+2">
+    <img src="https://via.placeholder.com/400x300?text=Project+3">
+    <img src="https://via.placeholder.com/400x300?text=Project+4">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
   <p>Email: yourname@example.com</p>
+  <p>LinkedIn | Behance | Dribbble</p>
 </section>
 
 <footer>
-  <p>&copy; 2026 Jane Doe</p>
+  © 2026 Jane Doe. All Rights Reserved.
 </footer>
 
 <script>
-  const toggleBtn = document.getElementById('modeToggle');
+  const toggleBtn = document.getElementById("modeToggle");
 
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    document.body.classList.toggle('light');
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
 
     toggleBtn.textContent =
-      document.body.classList.contains('dark')
-      ? 'Light Mode'
-      : 'Dark Mode';
+      document.body.classList.contains("dark")
+      ? "Light Mode"
+      : "Dark Mode";
   });
 
-  const sections = document.querySelectorAll('section');
+  const sections = document.querySelectorAll("section");
 
-  const revealOnScroll = () => {
+  const reveal = () => {
     sections.forEach(sec => {
       if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-        sec.classList.add('visible');
+        sec.classList.add("visible");
       }
     });
   };
 
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
+  window.addEventListener("scroll", reveal);
+  window.addEventListener("load", reveal);
 </script>
 
 </body>
